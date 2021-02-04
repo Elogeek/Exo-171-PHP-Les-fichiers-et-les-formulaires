@@ -1,5 +1,4 @@
 <?php
-
 /**
  * 1. Créez un formulaire classique contenant un champs input de type file
  * 2. Faites pointer l'action sur la page fichier.php ( que vous créerez )
@@ -14,3 +13,47 @@
  *    Attention, trouvez une solution pour que le fichier contienne du JSON valide !
  * 6. Affichez sur la page index les fichiers ayant déjà été uploadés.
  */
+?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Index</title>
+</head>
+<body>
+<?php
+if(isset($_GET['error'])) {
+    $error = $_GET['error'];
+
+    if($error === "0") {
+        echo "<div id='great'> L'envoi est un success !</div>";
+    }
+    elseif($error === "La taille du fichier est trop grande (max 3 mo) !") {
+        echo "<div class='error'>" . $error. "</div>";
+    }
+    elseif($error === " Oh, non le type de fichier n'est pas valide !") {
+        echo "<div class='error'>" . $error. "</div>";
+    }
+    elseif($error === "Oups, une erreur s'est produit lors de l'upload !") {
+        echo "<div class='error'>" . $error . "</div>";
+    }
+
+}
+
+?>
+<div id="container">
+    <form action="fichier.php" method="POST">
+        <div>
+            <label for="file">Votre fichier: </label>
+            <input type="file" id="file" name="file">
+            <input type="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

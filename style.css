@@ -1,0 +1,53 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15em;
+
+}
+
+form {
+    border: 8px double #fcb69f;
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    width: 25%;
+    height: 12rem;
+    text-align: center;
+    padding-top: 10rem;
+    box-shadow: 1rem 1rem antiquewhite;
+
+}
+
+#great {
+    position: absolute;
+    background-color: greenyellow;
+    width: 100%;
+    height: 6rem;
+    font-family: cursive;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    top: 1rem;
+}
+
+.error {
+    position: absolute;
+    background-color: darkred;
+    width: 100%;
+    height: 6rem;
+    font-family: cursive;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    top: 1rem;
+}
